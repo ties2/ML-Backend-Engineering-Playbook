@@ -6,7 +6,7 @@ ML/data companies (e.g. fintechs like bunq). Each chapter pairs a source documen
 Jupyter notebook, and the repo also includes a from-scratch ML algorithms library for whiteboard-style
 coding rounds.
 <p align="center">
-  <img src="assets/cover-image.png" alt="ML Backend Engineering Playbook" width="100%">
+  <img src="assets/bbap-sec-ML.png" alt="ML Backend Engineering Playbook" width="100%">
 </p>
 
 ## Contents
