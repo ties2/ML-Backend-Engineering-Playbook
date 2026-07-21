@@ -1,6 +1,6 @@
 # ML Engineer (Production) Interview Playbook
 
-A structured, chapter-by-chapter playbook for ML Engineer (Production) interviews — covering the
+A structured, chapter-by-chapter playbook for ML Engineer (Production) interviews covering the
 Python, backend, database, API, infrastructure, and testing knowledge expected at production-focused
 ML/data companies (e.g. fintechs like bunq). Each chapter pairs a source document with an interactive
 Jupyter notebook, and the repo also includes a from-scratch ML algorithms library for whiteboard-style
