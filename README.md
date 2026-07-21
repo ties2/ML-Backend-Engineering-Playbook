@@ -1,102 +1,53 @@
-# ML Engineer (Production) Interview Playbook
+# ML Engineer Playbook
 
-A structured, chapter-by-chapter playbook for ML Engineer (Production) interviews covering the
-Python, backend, database, API, infrastructure, and testing knowledge expected at production-focused
-ML/data companies (e.g. fintechs like bunq). Each chapter pairs a source document with an interactive
-Jupyter notebook, and the repo also includes a from-scratch ML algorithms library for whiteboard-style
-coding rounds.
+A chapter-by-chapter playbook for ML Engineer covering Python, backend,
+databases, APIs, infra, testing, distributed systems, ML-in-production, and system design. Each
+chapter pairs a source `.docx` with a companion Jupyter notebook (explanations, code, interview
+Q&A, cheat sheet).
+
 <p align="center">
   <img src="assets/bbap-sec-ML.png" alt="ML Backend Engineering Playbook" width="60%">
 </p>
 
 ## Contents
 
-```
-.
-├── Ch1_Python_for_Production/
-├── Ch2_Backend_FastAPI/
-├── Ch3_Database/
-├── Ch4_API_Design/
-├── Ch5_Docker/
-├── Ch6_Testing/
-├── ML_Engineer_Production_Interview_Prep.docx
-├── ml-backend-playbook.md
-└── scratch algorithms/
-```
-
-## Chapters
-
-Each chapter folder contains the original Word document (`.docx`) and a companion Jupyter notebook
-(`.ipynb`) with the same material translated, restructured, and annotated for active study — explanations,
-runnable/illustrative code cells, "interview tip" callouts, a model Q&A for the chapter's most-asked
-question, and a cheat sheet at the end.
-
 | # | Chapter | Core topics |
 |---|---|---|
-| 1 | [Python for Production](./Ch1_Python_for_Production/Ch1_Python_for_Production.ipynb) | OOP (encapsulation, ABC vs. Protocol, composition over inheritance), type hints & `mypy`, generators & lazy evaluation, decorators, context managers, `async`/`await`, time & space complexity, clean code & SOLID |
-| 2 | [Backend with FastAPI](./Ch2_Backend_FastAPI/Ch2_Backend_FastAPI.ipynb) | Layered architecture (controller → service → repository), FastAPI & Pydantic, dependency injection, the Repository pattern & Unit of Work, the Service pattern, structured error handling, logging & observability, config management, background tasks |
-| 3 | [Databases (PostgreSQL)](./Ch3_Database/Ch3_Database.ipynb) | SQL execution order, JOINs, indexing (B-Tree, composite, partial, GIN), transactions & ACID, isolation levels & MVCC, locking (pessimistic/optimistic) & deadlocks, PostgreSQL in production, N+1 / bulk upsert / keyset pagination patterns |
-| 4 | [API Design](./Ch4_API_Design/Ch4_API_Design.ipynb) | REST principles & HTTP verb semantics, status codes, JWT authentication, OAuth 2.0 & OIDC, pagination strategies, rate limiting, idempotency, API versioning |
-| 5 | [Docker & Containerization](./Ch5_Docker/Ch5_Docker.ipynb) | Images vs. containers vs. VMs, Dockerfile & layer caching, multi-stage builds, image optimization, Docker Compose, networking, volumes & data persistence, production hardening & model-serving considerations |
-| 6 | [Testing](./Ch6_Testing/Ch6_Testing.ipynb) | pytest & parametrization, fixtures & `conftest`, mocking & test doubles, unit vs. integration testing, testing async code & FastAPI, coverage, testing ML code & data, CI best practices & flaky tests |
+| 1 | [Python for Production](./Ch1_Python_for_Production/Ch1_Python_for_Production.ipynb) | OOP, type hints, generators, decorators, async, complexity, SOLID |
+| 2 | [Backend with FastAPI](./Ch2_Backend_FastAPI/Ch2_Backend_FastAPI.ipynb) | Layered architecture, DI, Repository/Service patterns, error handling, logging |
+| 3 | [Databases (PostgreSQL)](./Ch3_Database/Ch3_Database.ipynb) | Indexing, transactions, ACID, isolation levels, locking, pagination |
+| 4 | [API Design](./Ch4_API_Design/Ch4_API_Design.ipynb) | REST, JWT/OAuth2, pagination, rate limiting, idempotency, versioning |
+| 5 | [Docker](./Ch5_Docker/Ch5_Docker.ipynb) | Images/containers, multi-stage builds, Compose, production hardening |
+| 6 | [Testing](./Ch6_Testing/Ch6_Testing.ipynb) | pytest, fixtures, mocking, async/FastAPI testing, CI |
+| 7 | [Distributed Systems](./Ch7_Distributed_Systems/Ch7_Distributed_Systems.ipynb) | Redis, queues, Kafka vs. RabbitMQ, delivery guarantees, CAP, resilience |
+| 8 | [ML in Production](./Ch8_ML_Production/Ch8_ML_Production.ipynb) | Feature stores, model serving/versioning, monitoring, drift, A/B testing |
+| 9 | [System Design](./Ch9_System_Design/Ch9_System_Design.ipynb) | Fraud detection, transaction monitoring (AML), ML pipeline design |
 
-`ML_Engineer_Production_Interview_Prep.docx` is the consolidated source document covering all chapters
-in one file. `ml-backend-playbook.md` is a standalone quick-reference summarizing production concerns
-(exposing models via APIs, request handling, databases, logging, error handling, scaling, safe
-deployment) independent of the chapter series.
+`Doc/ML_Engineer_Production_Interview_Prep.docx` consolidates all chapters in one file.
+`ml-backend-playbook.md` is a standalone production-concerns quick reference.
 
-> **Note:** `~$_Engineer_Production_Interview_Prep.docx` is a Word lock/temp file (created automatically
-> while the `.docx` is open in Microsoft Word). It's safe to delete and isn't part of the actual content.
+## Other Material
 
-## Scratch Algorithms
+- **`python-for-ML/`** — a separate 12-notebook ML curriculum (foundations → theory-from-scratch →
+  scikit-learn → MLOps), see its [start-here guide](./python-for-ML/00_START_HERE.md).
+- **`scratch algorithms/`** — NumPy, no-scikit-learn implementations of classic ML algorithms
+  (linear/logistic regression, kNN, trees, SVM, k-means, PCA, neural net, etc.) with tests, for
+  "implement X from scratch" rounds.
+- **`challenges/`** — tiered, hands-on coding challenges (Git, CLI tools, SQL, queues, APIs,
+  Docker) as notebooks.
+- **`backend-edge-for-ai-engineers.md`** — short essay on why backend skills matter for AI engineers.
 
-`scratch algorithms/` contains from-scratch (no scikit-learn) NumPy implementations of classic ML
-algorithms, useful for the "implement X from scratch" style of interview question:
+## How to Use
 
-| File | Algorithm |
-|---|---|
-| `linear_regression.py` | Linear Regression |
-| `logistic_regression.py` | Logistic Regression |
-| `knn.py` | k-Nearest Neighbors |
-| `naive_bayes.py` | Naive Bayes |
-| `decision_tree.py` | Decision Tree |
-| `random_forest.py` | Random Forest |
-| `gradient_boosting.py` | Gradient Boosting |
-| `svm.py` | Support Vector Machine |
-| `kmeans.py` | K-Means Clustering |
-| `pca.py` | Principal Component Analysis |
-| `neural_network.py` | Neural Network (from scratch) |
-| `test_algorithms.py` | Tests for the above implementations |
-
-## How to Use This Playbook
-
-1. **Study a chapter:** open the `.ipynb` for the chapter you're preparing. Read each section, run the
-   Python code cells where applicable (note: some cells — especially in Ch3/Ch4/Ch5 — contain SQL,
-   Dockerfile, or YAML snippets, or reference undefined objects from illustrative examples, and are
-   meant for reading rather than execution).
-2. **Drill the Q&A:** each section ends with an interview question and a model answer — cover the
-   answer and try to say it out loud before checking.
-3. **Review the cheat sheet:** every chapter closes with a condensed cheat sheet — use these for a fast
-   pass the day of the interview.
-4. **Practice coding rounds:** use `scratch algorithms/` to rehearse implementing core ML algorithms
-   without library shortcuts, and run `test_algorithms.py` to check your implementations.
-5. **Keep the quick-reference handy:** `ml-backend-playbook.md` is a fast lookup for day-to-day
-   production engineering concerns, separate from interview prep.
-
-### Running the notebooks
+1. Work through chapters 1 → 9 in order (each builds on the last); jump to a chapter's cheat sheet
+   for a fast pre-interview refresher.
+2. Use `scratch algorithms/` and `challenges/` to rehearse hands-on/whiteboard rounds.
+3. Keep `ml-backend-playbook.md` handy as a day-to-day production reference.
 
 ```bash
 pip install jupyter
-jupyter notebook
+jupyter notebook   # then open any Ch*.ipynb
 ```
 
-Then open any `Ch*.ipynb` file. No additional dependencies are required to read the notebooks; a few
-code cells (e.g. `jwt`, `redis`, `fastapi`) reference libraries you'd only need installed if you want to
-actually execute those specific cells.
-
-## Suggested Study Order
-
-Chapters build on each other conceptually (Python fundamentals → backend architecture → data layer →
-API contract → deployment → testing), so working through them in order (1 → 6) is recommended for a
-first pass. For a targeted refresher, jump directly to the chapter matching your weak area and start
-with its cheat sheet.
+No extra dependencies are needed to read the notebooks — a few cells (`jwt`, `redis`, `fastapi`)
+only need their library installed if you want to actually run them.
